@@ -1,0 +1,8 @@
+{
+    "extends": [
+        "stylelint-config-unsass"
+    ],
+    "rules": {
+        "function-no-unknown": null
+    }
+}
