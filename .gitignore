@@ -1,0 +1,7 @@
+## Files
+*.log
+*.orig
+
+## Folders
+/.idea
+/node_modules
