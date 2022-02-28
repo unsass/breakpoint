@@ -1,0 +1,24 @@
+// ============================================================================================= //
+//                                             TEST                                              //
+// ============================================================================================= //
+
+@use "true" as *;
+@use "../index" as breakpoint;
+
+@include describe("breakpoint.get-value()") {
+    @include it("Should return value from token.") {
+        @include assert {
+            @include output(false) {
+                .foo {
+                    width: breakpoint.get-value(lg);
+                }
+            }
+
+            @include expect(false) {
+                .foo {
+                    width: 960px;
+                }
+            }
+        }
+    }
+}
