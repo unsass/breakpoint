@@ -1,0 +1,94 @@
+// ============================================================================================= //
+//                                             TEST                                              //
+// ============================================================================================= //
+
+@use "true" as *;
+@use "../index" as breakpoint;
+
+@include describe("breakpoint.up()") {
+    @include it("Should return breakpoint 'up' rules.") {
+        @include assert {
+            @include output(false) {
+                .foo {
+                    @include breakpoint.up(lg) {
+                        color: darkcyan;
+                    }
+                }
+            }
+
+            @include expect(false) {
+                @media (min-width: 960px) {
+                    .foo {
+                        color: darkcyan;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include describe("breakpoint.down()") {
+    @include it("Should return breakpoint 'down' rules.") {
+        @include assert {
+            @include output(false) {
+                .foo {
+                    @include breakpoint.down(lg) {
+                        color: darkcyan;
+                    }
+                }
+            }
+
+            @include expect(false) {
+                @media (max-width: 959px) {
+                    .foo {
+                        color: darkcyan;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include describe("breakpoint.only()") {
+    @include it("Should return breakpoint 'only' rules.") {
+        @include assert {
+            @include output(false) {
+                .foo {
+                    @include breakpoint.only(lg) {
+                        color: darkcyan;
+                    }
+                }
+            }
+
+            @include expect(false) {
+                @media (min-width: 960px) and (max-width: 1199px) {
+                    .foo {
+                        color: darkcyan;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include describe("breakpoint.between()") {
+    @include it("Should return breakpoint 'between' rules.") {
+        @include assert {
+            @include output(false) {
+                .foo {
+                    @include breakpoint.between(md, xl) {
+                        color: darkcyan;
+                    }
+                }
+            }
+
+            @include expect(false) {
+                @media (min-width: 768px) and (max-width: 1199px) {
+                    .foo {
+                        color: darkcyan;
+                    }
+                }
+            }
+        }
+    }
+}

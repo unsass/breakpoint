@@ -1,0 +1,148 @@
+// ============================================================================================= //
+//                                            MIXINS                                             //
+// ============================================================================================= //
+
+@use "sass:map";
+@use "sass:string";
+@use "./functions";
+@use "./variables";
+
+///
+/// @example - scss
+///   .foo {
+///     @include up(lg) {
+///       color: darkcyan;
+///     }
+///   }
+///
+/// @example - css
+///   @media (min-width: 960px) {
+///     .foo {
+///       color: darkcyan;
+///     }
+///   }
+///
+/// @see {function} functions.set-min
+///
+@mixin up($token) {
+    @if $token and not map.has-key(variables.$screens, $token) {
+        @error "Invalid token, `#{$token}` doesn't exist. Choose one of #{map.keys(variables.$screens)}.";
+    }
+
+    $min: functions.set-min($token);
+
+    @if $min {
+        @media (min-width: $min) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+///
+/// @example - scss
+///   .foo {
+///     @include down(lg) {
+///       color: darkcyan;
+///     }
+///   }
+///
+/// @example - css
+///   @media (max-width: 959px) {
+///     .foo {
+///       color: darkcyan;
+///     }
+///   }
+///
+/// @see {function} functions.set-max
+///
+@mixin down($token) {
+    @if $token and not map.has-key(variables.$screens, $token) {
+        @error "Invalid token, `#{$token}` doesn't exist. Choose one of #{map.keys(variables.$screens)}.";
+    }
+
+    $max: functions.set-max($token);
+
+    @if $max {
+        @media (max-width: $max) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+///
+/// @example - scss
+///   .foo {
+///     @include only(lg) {
+///       color: darkcyan;
+///     }
+///   }
+///
+/// @example - css
+///   @media (min-width: 960px) and (max-width: 1199px) {
+///     .foo {
+///       color: darkcyan;
+///     }
+///   }
+///
+/// @see {function} functions.set-min
+/// @see {function} functions.set-max
+/// @see {function} functions.get-next
+///
+@mixin only($token) {
+    @if $token and not map.has-key(variables.$screens, $token) {
+        @error "Invalid token, `#{$token}` doesn't exist. Choose one of #{map.keys(variables.$screens)}.";
+    }
+
+    $min: functions.set-min($token);
+    $next: functions.get-next($token);
+    $max: functions.set-max($next);
+
+    @if $min != null and $max != null {
+        @media (min-width: $min) and (max-width: $max) {
+            @content;
+        }
+    } @else if $max == null {
+        @include up($token) {
+            @content;
+        }
+    }
+}
+
+///
+/// @example - scss
+///   .foo {
+///     @include between(md, xl) {
+///       color: darkcyan;
+///     }
+///   }
+///
+/// @example - css
+///   @media (min-width: 768px) and (max-width: 1199px) {
+///     .foo {
+///       color: darkcyan;
+///     }
+///   }
+///
+/// @see {function} functions.set-min
+/// @see {function} functions.set-max
+///
+@mixin between($min, $max) {
+    @if $min and not map.has-key(variables.$screens, $min) {
+        @error "Invalid token, `#{$min}` doesn't exist. Choose one of #{map.keys(variables.$screens)}.";
+    } @else if $max and not map.has-key(variables.$screens, $max) {
+        @error "Invalid token, `#{$max}` doesn't exist. Choose one of #{map.keys(variables.$screens)}.";
+    }
+
+    $min: functions.set-min($min);
+    $max: functions.set-max($max);
+
+    @if $min != null and $max != null {
+        @media (min-width: $min) and (max-width: $max) {
+            @content;
+        }
+    }
+}
