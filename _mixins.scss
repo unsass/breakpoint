@@ -146,3 +146,23 @@
         }
     }
 }
+
+///
+/// @example - scss
+///   @include config((
+///     "3xl": 1980px
+///   ));
+///
+/// @example - scss
+///   @include config((
+///     "tablet": 768px,
+//      "desktop": 960px
+///   ), true);
+///
+@mixin config($screens: (), $from-scratch: false) {
+    @if $screens and not $from-scratch {
+        variables.$extend: map.merge(variables.$extend, $screens);
+    } @else {
+        variables.$extend: $screens;
+    }
+}

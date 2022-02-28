@@ -92,3 +92,53 @@
         }
     }
 }
+
+@include describe("breakpoint.config()") {
+    @include it("Should return breakpoint 'config' rules.") {
+        @include assert {
+            @include output(false) {
+                @include breakpoint.config((
+                    "3xl": 1980px
+                ));
+
+                .foo {
+                    @include breakpoint.up("3xl") {
+                        color: darkcyan;
+                    }
+                }
+            }
+
+            @include expect(false) {
+                @media (min-width: 1980px) {
+                    .foo {
+                        color: darkcyan;
+                    }
+                }
+            }
+        }
+    }
+
+    @include it("Should return breakpoint 'config' rules with '$from-scratch' option.") {
+        @include assert {
+            @include output(false) {
+                @include breakpoint.config((
+                    "tablet": 768px
+                ), true);
+
+                .foo {
+                    @include breakpoint.up("tablet") {
+                        color: darkcyan;
+                    }
+                }
+            }
+
+            @include expect(false) {
+                @media (min-width: 768px) {
+                    .foo {
+                        color: darkcyan;
+                    }
+                }
+            }
+        }
+    }
+}
