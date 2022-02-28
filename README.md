@@ -2,7 +2,7 @@
 
 [![Version](https://flat.badgen.net/npm/v/@unsass/breakpoint)](https://www.npmjs.com/package/@unsass/breakpoint)
 [![Downloads](https://flat.badgen.net/npm/dt/@unsass/breakpoint)](https://www.npmjs.com/package/@unsass/breakpoint)
-[![License](https://flat.badgen.net/github/license/@unsass/breakpoint)](https://flat.badgen.net/github/license/@unsass/breakpoint)
+[![License](https://flat.badgen.net/npm/license/@unsass/breakpoint)](https://www.npmjs.com/package/@unsass/breakpoint)
 
 ## Introduction
 

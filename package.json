@@ -36,7 +36,8 @@
         "breakpoint",
         "unsass",
         "sass",
-        "css"
+        "css",
+        "front-end"
     ],
     "license": "MIT",
     "homepage": "https://github.com/unsass/breakpoint#readme",
