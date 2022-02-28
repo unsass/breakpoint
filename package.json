@@ -1,7 +1,7 @@
 {
     "name": "@unsass/breakpoint",
     "version": "0.0.0",
-    "description": "Sass breakpoint classes generator.",
+    "description": "Easily manage your CSS breakpoint rules.",
     "scripts": {
         "prepare": "husky install"
     },
