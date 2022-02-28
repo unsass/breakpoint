@@ -4,11 +4,7 @@
 
 @use "sass:map";
 
-// ------------------------------------------------------------------------- //
-// Screen sizes
-// ------------------------------------------------------------------------- //
-
-$defaults: (
+$_defaults: (
     "xs": 320px,
     "sm": 480px,
     "md": 768px,
@@ -17,14 +13,5 @@ $defaults: (
     "2xl": 1400px
 );
 
-$tokens: ();
-$clean-sweep: false !default;
 $screens: () !default;
-
-@if not $clean-sweep {
-    $tokens: map.merge($defaults, $screens);
-} @else {
-    $tokens: $screens;
-}
-
-$screens: $tokens;
+$extend: map.merge($_defaults, $screens);

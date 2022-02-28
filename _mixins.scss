@@ -25,8 +25,8 @@
 /// @see {function} functions.set-min
 ///
 @mixin up($token) {
-    @if $token and not map.has-key(variables.$screens, $token) {
-        @error "Invalid token, `#{$token}` doesn't exist. Choose one of #{map.keys(variables.$screens)}.";
+    @if $token and not map.has-key(variables.$extend, $token) {
+        @error "Invalid token, `#{$token}` doesn't exist. Choose one of #{map.keys(variables.$extend)}.";
     }
 
     $min: functions.set-min($token);
@@ -58,8 +58,8 @@
 /// @see {function} functions.set-max
 ///
 @mixin down($token) {
-    @if $token and not map.has-key(variables.$screens, $token) {
-        @error "Invalid token, `#{$token}` doesn't exist. Choose one of #{map.keys(variables.$screens)}.";
+    @if $token and not map.has-key(variables.$extend, $token) {
+        @error "Invalid token, `#{$token}` doesn't exist. Choose one of #{map.keys(variables.$extend)}.";
     }
 
     $max: functions.set-max($token);
@@ -93,8 +93,8 @@
 /// @see {function} functions.get-next
 ///
 @mixin only($token) {
-    @if $token and not map.has-key(variables.$screens, $token) {
-        @error "Invalid token, `#{$token}` doesn't exist. Choose one of #{map.keys(variables.$screens)}.";
+    @if $token and not map.has-key(variables.$extend, $token) {
+        @error "Invalid token, `#{$token}` doesn't exist. Choose one of #{map.keys(variables.$extend)}.";
     }
 
     $min: functions.set-min($token);
@@ -131,10 +131,10 @@
 /// @see {function} functions.set-max
 ///
 @mixin between($min, $max) {
-    @if $min and not map.has-key(variables.$screens, $min) {
-        @error "Invalid token, `#{$min}` doesn't exist. Choose one of #{map.keys(variables.$screens)}.";
-    } @else if $max and not map.has-key(variables.$screens, $max) {
-        @error "Invalid token, `#{$max}` doesn't exist. Choose one of #{map.keys(variables.$screens)}.";
+    @if $min and not map.has-key(variables.$extend, $min) {
+        @error "Invalid token, `#{$min}` doesn't exist. Choose one of #{map.keys(variables.$extend)}.";
+    } @else if $max and not map.has-key(variables.$extend, $max) {
+        @error "Invalid token, `#{$max}` doesn't exist. Choose one of #{map.keys(variables.$extend)}.";
     }
 
     $min: functions.set-min($min);

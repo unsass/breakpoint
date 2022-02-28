@@ -7,23 +7,35 @@
 @use "@sass-collective/strip-unit";
 @use "./variables";
 
+///
+/// Get value.
+///
 @function get-value($token) {
-    @return map.get(variables.$screens, $token);
+    @return map.get(variables.$extend, $token);
 }
 
+///
+/// Get next.
+///
 @function get-next($value) {
-    $keys: map.keys(variables.$screens);
+    $keys: map.keys(variables.$extend);
     $n: list.index($keys, $value);
 
     @return if($n < length($keys), list.nth($keys, $n + 1), null);
 }
 
+///
+/// Set min.
+///
 @function set-min($token) {
     $min: get-value($token);
 
     @return if($min != 0, $min, null);
 }
 
+///
+/// Set max.
+///
 @function set-max($token) {
     $max: get-value($token);
 
