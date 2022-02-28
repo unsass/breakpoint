@@ -47,6 +47,9 @@
         "type": "git",
         "url": "git+https://github.com/unsass/breakpoint.git"
     },
+    "files": [
+        "*.scss"
+    ],
     "publishConfig": {
         "access": "public"
     }
