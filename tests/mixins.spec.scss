@@ -118,7 +118,7 @@
         }
     }
 
-    @include it("Should return breakpoint 'config' rules with '$from-scratch' option.") {
+    @include it("Should return breakpoint 'config' rules with '$reset' option.") {
         @include assert {
             @include output(false) {
                 @include breakpoint.config((

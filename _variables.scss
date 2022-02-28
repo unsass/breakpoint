@@ -13,5 +13,12 @@ $_defaults: (
     "2xl": 1400px
 );
 
+$extend: ();
 $screens: () !default;
-$extend: map.merge($_defaults, $screens);
+$reset: false !default;
+
+@if $reset {
+    $extend: $screens;
+} @else {
+    $extend: map.merge($_defaults, $screens);
+}
