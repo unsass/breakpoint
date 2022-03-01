@@ -8,6 +8,10 @@
 
 Easily manage your CSS breakpoint rules.
 
+> **Note:** this is new code moved
+> from [`@sass-collective/breakpoint`](https://github.com/sass-collective/sass-collective/tree/master/packages/breakpoint)
+> repository.
+
 ## Installing
 
 ```shell
