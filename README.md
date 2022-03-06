@@ -86,6 +86,8 @@ with mixins.
 #### Declare config with `breakpoint.config()`
 
 ```scss
+@use "@unsass/breakpoint";
+
 // Extend the default list...
 @include breakpoint.config((
     "3xl": 1980px
