@@ -19,7 +19,7 @@
         "@semantic-release/changelog": "^6.0.1",
         "@semantic-release/git": "^10.0.1",
         "@types/node": "^17.0.23",
-        "glob": "^7.2.0",
+        "glob": "^8.0.1",
         "husky": "^7.0.4",
         "jest": "^27.5.1",
         "npm-run-all": "^4.1.5",
