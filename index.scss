@@ -2,6 +2,6 @@
 //                                          BREAKPOINT                                           //
 // ============================================================================================= //
 
-@forward "./variables";
-@forward "./mixins";
-@forward "./functions" hide get-next, set-min, set-max;
+@forward "./src/variables";
+@forward "./src/mixins";
+@forward "./src/functions" hide get-next, set-min, set-max;
