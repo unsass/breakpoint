@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0](https://github.com/unsass/breakpoint/compare/v1.0.0...v2.0.0) (2022-06-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* move main files on `src` folder
+
+### Code Refactoring
+
+* move main files on `src` folder ([3307439](https://github.com/unsass/breakpoint/commit/3307439cb7fb7b6d4a67b32eabcbff19c604ccb6))
+
 ## 1.0.0 (2022-02-28)
 
 
