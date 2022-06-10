@@ -9,13 +9,13 @@
     @include it("Should return value from token.") {
         @include assert {
             @include output(false) {
-                .foo {
+                .test {
                     width: breakpoint.get-value(lg);
                 }
             }
 
             @include expect(false) {
-                .foo {
+                .test {
                     width: 960px;
                 }
             }

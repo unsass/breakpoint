@@ -9,7 +9,7 @@
     @include it("Should return breakpoint 'up' rules.") {
         @include assert {
             @include output(false) {
-                .foo {
+                .test {
                     @include breakpoint.up(lg) {
                         color: darkcyan;
                     }
@@ -18,7 +18,7 @@
 
             @include expect(false) {
                 @media (min-width: 960px) {
-                    .foo {
+                    .test {
                         color: darkcyan;
                     }
                 }
@@ -31,7 +31,7 @@
     @include it("Should return breakpoint 'down' rules.") {
         @include assert {
             @include output(false) {
-                .foo {
+                .test {
                     @include breakpoint.down(lg) {
                         color: darkcyan;
                     }
@@ -40,7 +40,7 @@
 
             @include expect(false) {
                 @media (max-width: 959px) {
-                    .foo {
+                    .test {
                         color: darkcyan;
                     }
                 }
@@ -53,7 +53,7 @@
     @include it("Should return breakpoint 'only' rules.") {
         @include assert {
             @include output(false) {
-                .foo {
+                .test {
                     @include breakpoint.only(lg) {
                         color: darkcyan;
                     }
@@ -62,7 +62,7 @@
 
             @include expect(false) {
                 @media (min-width: 960px) and (max-width: 1199px) {
-                    .foo {
+                    .test {
                         color: darkcyan;
                     }
                 }
@@ -75,7 +75,7 @@
     @include it("Should return breakpoint 'between' rules.") {
         @include assert {
             @include output(false) {
-                .foo {
+                .test {
                     @include breakpoint.between(md, xl) {
                         color: darkcyan;
                     }
@@ -84,7 +84,7 @@
 
             @include expect(false) {
                 @media (min-width: 768px) and (max-width: 1199px) {
-                    .foo {
+                    .test {
                         color: darkcyan;
                     }
                 }
@@ -101,7 +101,7 @@
                     "3xl": 1980px
                 ));
 
-                .foo {
+                .test {
                     @include breakpoint.up("3xl") {
                         color: darkcyan;
                     }
@@ -110,7 +110,7 @@
 
             @include expect(false) {
                 @media (min-width: 1980px) {
-                    .foo {
+                    .test {
                         color: darkcyan;
                     }
                 }
@@ -125,7 +125,7 @@
                     "tablet": 768px
                 ), true);
 
-                .foo {
+                .test {
                     @include breakpoint.up("tablet") {
                         color: darkcyan;
                     }
@@ -134,7 +134,7 @@
 
             @include expect(false) {
                 @media (min-width: 768px) {
-                    .foo {
+                    .test {
                         color: darkcyan;
                     }
                 }
