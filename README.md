@@ -209,9 +209,10 @@ The following Sass...
 
 ### Sass functions
 
-| Function            | Description                                 |
-|---------------------|---------------------------------------------|
-| `get-value($token)` | Get value from the configured tokens list.  |
+| Function            | Description                                |
+|---------------------|--------------------------------------------|
+| `get-value($token)` | Get value from the configured tokens list. |
+| `get-screens()`     | Get list of screens tokens.                |
 
 #### Get token value with `breakpoint.get-value()`
 

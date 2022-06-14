@@ -25,6 +25,13 @@
 }
 
 ///
+/// Get screens list.
+///
+@function get-screens() {
+    @return variables.$extend;
+}
+
+///
 /// Set min.
 ///
 @function set-min($token) {

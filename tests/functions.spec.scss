@@ -22,3 +22,17 @@
         }
     }
 }
+
+@include describe("breakpoint.get-screens()") {
+    @include it("Should return a map of screens.") {
+        @include assert {
+            @include output(false) {
+                @debug breakpoint.get-screens();
+            }
+
+            @include expect(false) {
+                // ...
+            }
+        }
+    }
+}
