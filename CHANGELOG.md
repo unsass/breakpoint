@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.0](https://github.com/unsass/breakpoint/compare/v2.0.0...v2.1.0) (2022-06-14)
+
+
+### Features
+
+* **functions:** add `get-screens` ([2ee5651](https://github.com/unsass/breakpoint/commit/2ee565137a31c5c25df2bf342434b498156df712))
+
 ## [2.0.0](https://github.com/unsass/breakpoint/compare/v1.0.0...v2.0.0) (2022-06-10)
 
 
