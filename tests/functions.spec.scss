@@ -25,14 +25,13 @@
 
 @include describe("breakpoint.get-screens()") {
     @include it("Should return a map of screens.") {
-        @include assert {
-            @include output(false) {
-                @debug breakpoint.get-screens();
-            }
-
-            @include expect(false) {
-                // ...
-            }
-        }
+        @include assert-equal(breakpoint.get-screens(), (
+            "xs": 320px,
+            "sm": 480px,
+            "md": 768px,
+            "lg": 960px,
+            "xl": 1200px,
+            "2xl": 1400px
+        ));
     }
 }
