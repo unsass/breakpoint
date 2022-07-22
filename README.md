@@ -24,7 +24,7 @@ npm install @unsass/breakpoint
 @use "@unsass/breakpoint";
 
 .foo {
-    @include breakpoint.up(lg) {
+    @include breakpoint.up("lg") {
         // ...
     }
 }
@@ -119,7 +119,7 @@ The following Sass...
 @use "@unsass/breakpoint";
 
 .foo {
-    @include breakpoint.up(lg) {
+    @include breakpoint.up("lg") {
         color: darkcyan;
     }
 }
@@ -143,7 +143,7 @@ The following Sass...
 @use "@unsass/breakpoint";
 
 .foo {
-    @include breakpoint.down(lg) {
+    @include breakpoint.down("lg") {
         color: darkcyan;
     }
 }
@@ -167,7 +167,7 @@ The following Sass...
 @use "@unsass/breakpoint";
 
 .foo {
-    @include breakpoint.only(lg) {
+    @include breakpoint.only("lg") {
         color: darkcyan;
     }
 }
@@ -191,7 +191,7 @@ The following Sass...
 @use "@unsass/breakpoint";
 
 .foo {
-    @include breakpoint.between(md, xl) {
+    @include breakpoint.between("md", "xl") {
         color: darkcyan;
     }
 }
@@ -222,7 +222,7 @@ The following Sass...
 @use "@unsass/breakpoint";
 
 .foo {
-    width: breakpoint.get-value(lg);
+    width: breakpoint.get-value("lg");
 }
 ```
 

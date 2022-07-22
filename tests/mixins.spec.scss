@@ -10,7 +10,7 @@
         @include assert {
             @include output(false) {
                 .test {
-                    @include breakpoint.up(lg) {
+                    @include breakpoint.up("lg") {
                         color: darkcyan;
                     }
                 }
@@ -32,7 +32,7 @@
         @include assert {
             @include output(false) {
                 .test {
-                    @include breakpoint.down(lg) {
+                    @include breakpoint.down("lg") {
                         color: darkcyan;
                     }
                 }
@@ -54,7 +54,7 @@
         @include assert {
             @include output(false) {
                 .test {
-                    @include breakpoint.only(lg) {
+                    @include breakpoint.only("lg") {
                         color: darkcyan;
                     }
                 }
@@ -76,7 +76,7 @@
         @include assert {
             @include output(false) {
                 .test {
-                    @include breakpoint.between(md, xl) {
+                    @include breakpoint.between("md", "xl") {
                         color: darkcyan;
                     }
                 }

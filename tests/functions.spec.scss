@@ -10,7 +10,7 @@
         @include assert {
             @include output(false) {
                 .test {
-                    width: breakpoint.get-value(lg);
+                    width: breakpoint.get-value("lg");
                 }
             }
 

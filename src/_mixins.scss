@@ -10,7 +10,7 @@
 ///
 /// @example - scss
 ///   .foo {
-///     @include up(lg) {
+///     @include up("lg") {
 ///       color: darkcyan;
 ///     }
 ///   }
@@ -43,7 +43,7 @@
 ///
 /// @example - scss
 ///   .foo {
-///     @include down(lg) {
+///     @include down("lg") {
 ///       color: darkcyan;
 ///     }
 ///   }
@@ -76,7 +76,7 @@
 ///
 /// @example - scss
 ///   .foo {
-///     @include only(lg) {
+///     @include only("lg") {
 ///       color: darkcyan;
 ///     }
 ///   }
@@ -115,7 +115,7 @@
 ///
 /// @example - scss
 ///   .foo {
-///     @include between(md, xl) {
+///     @include between("md", "xl") {
 ///       color: darkcyan;
 ///     }
 ///   }
