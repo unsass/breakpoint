@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.1](https://github.com/unsass/breakpoint/compare/v2.1.0...v2.1.1) (2022-07-22)
+
+
+### Bug Fixes
+
+* remove unneeded dependencies ([09ae79f](https://github.com/unsass/breakpoint/commit/09ae79f3d8c59544e3d67fb27f2a3b37b90525ee))
+
 ## [2.1.0](https://github.com/unsass/breakpoint/compare/v2.0.0...v2.1.0) (2022-06-14)
 
 

@@ -1,6 +1,6 @@
 {
     "name": "@unsass/breakpoint",
-    "version": "2.1.0",
+    "version": "2.1.1",
     "description": "Easily manage your CSS breakpoint rules.",
     "scripts": {
         "lint:css": "stylelint --fix \"**/*.scss\"",
