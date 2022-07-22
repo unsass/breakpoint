@@ -106,8 +106,8 @@ with mixins.
 
 | Mixin                 | Description                                                                                                                    |
 |-----------------------|--------------------------------------------------------------------------------------------------------------------------------|
-| `up($token)`          | Sets media rule for minimum with only.                                                                                         |
-| `down($token)`        | Sets media rule for maximum with only.                                                                                         |
+| `up($token)`          | Sets media rule for minimum width only.                                                                                        |
+| `down($token)`        | Sets media rule for maximum width only.                                                                                        |
 | `only($token)`        | Sets media rule for between minimum and maximum widths, but the maximum will be automatically set with next value of `$token`. |
 | `between($min, $max)` | Sets media rule for between minimum and maximum widths.                                                                        |
 
