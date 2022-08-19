@@ -32,10 +32,11 @@
         "sass": "^1.52.3"
     },
     "keywords": [
-        "breakpoint",
-        "unsass",
         "sass",
-        "css",
+        "breakpoint",
+        "media queries",
+        "media query",
+        "unsass",
         "front-end"
     ],
     "license": "MIT",
