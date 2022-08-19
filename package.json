@@ -1,7 +1,7 @@
 {
     "name": "@unsass/breakpoint",
     "version": "2.1.1",
-    "description": "Easily manage your CSS breakpoint rules.",
+    "description": "Sass functions and mixins to use media queries rules.",
     "scripts": {
         "lint:css": "stylelint --fix \"**/*.scss\"",
         "lint": "npm-run-all --parallel lint:*",
