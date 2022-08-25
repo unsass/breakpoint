@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.0](https://github.com/unsass/breakpoint/compare/v2.1.2...v2.2.0) (2022-08-25)
+
+
+### Features
+
+* **get-screens:** add `exclude` option ([84fbb0b](https://github.com/unsass/breakpoint/commit/84fbb0bacef95b4e06f2c2eb73b73a75faa44db9)), closes [#43](https://github.com/unsass/breakpoint/issues/43)
+
 ## [2.1.2](https://github.com/unsass/breakpoint/compare/v2.1.1...v2.1.2) (2022-08-19)
 
 
