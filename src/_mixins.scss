@@ -24,6 +24,8 @@
 ///
 /// @see {function} functions.set-min
 ///
+/// @access public
+///
 @mixin up($token) {
     @if $token and not map.has-key(variables.$extend, $token) {
         @error "Invalid token, `#{$token}` doesn't exist. Choose one of #{map.keys(variables.$extend)}.";
@@ -56,6 +58,8 @@
 ///   }
 ///
 /// @see {function} functions.set-max
+///
+/// @access public
 ///
 @mixin down($token) {
     @if $token and not map.has-key(variables.$extend, $token) {
@@ -91,6 +95,8 @@
 /// @see {function} functions.set-min
 /// @see {function} functions.set-max
 /// @see {function} functions.get-next
+///
+/// @access public
 ///
 @mixin only($token) {
     @if $token and not map.has-key(variables.$extend, $token) {
@@ -130,6 +136,8 @@
 /// @see {function} functions.set-min
 /// @see {function} functions.set-max
 ///
+/// @access public
+///
 @mixin between($min, $max) {
     @if $min and not map.has-key(variables.$extend, $min) {
         @error "Invalid token, `#{$min}` doesn't exist. Choose one of #{map.keys(variables.$extend)}.";
@@ -158,6 +166,8 @@
 ///     "tablet": 768px,
 //      "desktop": 960px
 ///   ), true);
+///
+/// @access public
 ///
 @mixin config($screens: (), $reset: false) {
     @if $screens and not $reset {

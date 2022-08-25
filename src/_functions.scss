@@ -9,12 +9,16 @@
 ///
 /// Get value.
 ///
+/// @access public
+///
 @function get-value($token) {
     @return map.get(variables.$extend, $token);
 }
 
 ///
 /// Get next.
+///
+/// @access private
 ///
 @function get-next($value) {
     $keys: map.keys(variables.$extend);
@@ -37,6 +41,8 @@
 ///
 /// Set min.
 ///
+/// @access private
+///
 @function set-min($token) {
     $min: get-value($token);
 
@@ -45,6 +51,8 @@
 
 ///
 /// Set max.
+///
+/// @access private
 ///
 @function set-max($token) {
     $max: get-value($token);
