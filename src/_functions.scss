@@ -26,8 +26,12 @@
 ///
 /// Get screens list.
 ///
-@function get-screens() {
-    @return variables.$extend;
+/// @param {arglist} $exclude - Exclude value.
+///
+/// @access public
+///
+@function get-screens($exclude...) {
+    @return map.remove(variables.$extend, $exclude...);
 }
 
 ///
