@@ -5,52 +5,56 @@
 @use "true" as *;
 @use "../index" as breakpoint;
 
-@include describe("breakpoint.get-value()") {
-    @include it("Should return value from token.") {
-        @include assert {
-            @include output(false) {
-                .test {
-                    width: breakpoint.get-value("lg");
-                }
-            }
+@include describe("breakpoint") {
+    @include describe("functions") {
+        @include describe("get-value()") {
+            @include it("Should return value from token.") {
+                @include assert {
+                    @include output(false) {
+                        .test {
+                            width: breakpoint.get-value("lg");
+                        }
+                    }
 
-            @include expect(false) {
-                .test {
-                    width: 960px;
+                    @include expect(false) {
+                        .test {
+                            width: 960px;
+                        }
+                    }
                 }
             }
         }
-    }
-}
 
-@include describe("breakpoint.get-screens()") {
-    @include it("Should return a map of screens.") {
-        @include assert-equal(breakpoint.get-screens(), (
-            "xs": 320px,
-            "sm": 480px,
-            "md": 768px,
-            "lg": 960px,
-            "xl": 1200px,
-            "2xl": 1400px
-        ));
-    }
+        @include describe("get-screens()") {
+            @include it("Should return a map of screens.") {
+                @include assert-equal(breakpoint.get-screens(), (
+                    "xs": 320px,
+                    "sm": 480px,
+                    "md": 768px,
+                    "lg": 960px,
+                    "xl": 1200px,
+                    "2xl": 1400px
+                ));
+            }
 
-    @include it("Should return a map of screens with excluded one value.") {
-        @include assert-equal(breakpoint.get-screens("2xl"), (
-            "xs": 320px,
-            "sm": 480px,
-            "md": 768px,
-            "lg": 960px,
-            "xl": 1200px
-        ));
-    }
+            @include it("Should return a map of screens with excluded one value.") {
+                @include assert-equal(breakpoint.get-screens("2xl"), (
+                    "xs": 320px,
+                    "sm": 480px,
+                    "md": 768px,
+                    "lg": 960px,
+                    "xl": 1200px
+                ));
+            }
 
-    @include it("Should return a map of screens with excluded pultiple values.") {
-        @include assert-equal(breakpoint.get-screens("md", "2xl"), (
-            "xs": 320px,
-            "sm": 480px,
-            "lg": 960px,
-            "xl": 1200px
-        ));
+            @include it("Should return a map of screens with excluded multiple values.") {
+                @include assert-equal(breakpoint.get-screens("md", "2xl"), (
+                    "xs": 320px,
+                    "sm": 480px,
+                    "lg": 960px,
+                    "xl": 1200px
+                ));
+            }
+        }
     }
 }
