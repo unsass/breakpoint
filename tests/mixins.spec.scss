@@ -8,7 +8,7 @@
 @include describe("breakpoint") {
     @include describe("mixins") {
         @include describe("up()") {
-            @include it("Should return breakpoint 'up' rules.") {
+            @include it("Should return breakpoint rules.") {
                 @include assert {
                     @include output(false) {
                         .test {
@@ -30,7 +30,7 @@
         }
 
         @include describe("down()") {
-            @include it("Should return breakpoint 'down' rules.") {
+            @include it("Should return breakpoint rules.") {
                 @include assert {
                     @include output(false) {
                         .test {
@@ -52,7 +52,7 @@
         }
 
         @include describe("only()") {
-            @include it("Should return breakpoint 'only' rules.") {
+            @include it("Should return breakpoint rules.") {
                 @include assert {
                     @include output(false) {
                         .test {
@@ -74,7 +74,7 @@
         }
 
         @include describe("between()") {
-            @include it("Should return breakpoint 'between' rules.") {
+            @include it("Should return breakpoint rules.") {
                 @include assert {
                     @include output(false) {
                         .test {
@@ -96,7 +96,7 @@
         }
 
         @include describe("config()") {
-            @include it("Should return breakpoint 'config' rules.") {
+            @include it("Should return breakpoint rules.") {
                 @include assert {
                     @include output(false) {
                         @include breakpoint.config((
@@ -120,7 +120,7 @@
                 }
             }
 
-            @include it("Should return breakpoint 'config' rules with '$reset' option.") {
+            @include it("Should return breakpoint rules with '$reset' option.") {
                 @include assert {
                     @include output(false) {
                         @include breakpoint.config((
