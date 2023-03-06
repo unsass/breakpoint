@@ -1,6 +1,7 @@
 ## Files
 *.log
 *.orig
+junit.xml
 
 ## Folders
 /.idea
