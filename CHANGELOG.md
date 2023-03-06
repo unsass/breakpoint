@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.0](https://github.com/unsass/breakpoint/compare/v2.2.0...v2.3.0) (2023-03-06)
+
+
+### Features
+
+* **deps:** bump to `sass` 1.58.3 ([4729688](https://github.com/unsass/breakpoint/commit/47296884d8941eec9955770960fdd6ad959bc66b))
+
+
+### Build System
+
+* **deps:** bump `sass` 1.53.0 ([f3cb227](https://github.com/unsass/breakpoint/commit/f3cb2274f5637cf41d09fb52a50f6cd7ce036b64))
+
 ## [2.2.0](https://github.com/unsass/breakpoint/compare/v2.1.2...v2.2.0) (2022-08-25)
 
 
