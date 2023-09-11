@@ -31,7 +31,7 @@
         "stylelint-config-unsass": "^1.0.1"
     },
     "dependencies": {
-        "sass": "^1.58.3"
+        "sass": "^1.66.1"
     },
     "keywords": [
         "sass",
