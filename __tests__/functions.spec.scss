@@ -24,6 +24,24 @@
         }
     }
 
+    @include describe("get-next()") {
+        @include it("Should return value from token.") {
+            @include assert {
+                @include output(false) {
+                    .test {
+                        width: breakpoint.get-value("lg");
+                    }
+                }
+
+                @include expect(false) {
+                    .test {
+                        width: 960px;
+                    }
+                }
+            }
+        }
+    }
+
     @include describe("get-screens()") {
         @include it("Should return a map of screens.") {
             @include assert-equal(breakpoint.get-screens(), (

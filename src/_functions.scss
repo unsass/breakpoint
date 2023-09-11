@@ -16,9 +16,9 @@
 }
 
 ///
-/// Get next.
+/// Get next token.
 ///
-/// @access private
+/// @access public
 ///
 @function get-next($value) {
     $keys: map.keys(variables.$extend);
