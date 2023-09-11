@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.0](https://github.com/unsass/breakpoint/compare/v2.3.0...v2.4.0) (2023-09-11)
+
+
+### Features
+
+* **function:** add `get-next()` to public ([95eb60b](https://github.com/unsass/breakpoint/commit/95eb60baad56668132478f57c0750f8d2ac3cafa))
+
+
+### Build System
+
+* **deps:** bump to `sass` 1.66.1 ([64126cd](https://github.com/unsass/breakpoint/commit/64126cdba032ad8cb1f256a11319c4bb3e9853e6))
+* **deps:** prevent dependencies vulnerabilities ([04f8a67](https://github.com/unsass/breakpoint/commit/04f8a67c503ba2690afac850bfbd3a3bfdf0c54d))
+
 ## [2.3.0](https://github.com/unsass/breakpoint/compare/v2.2.0...v2.3.0) (2023-03-06)
 
 
