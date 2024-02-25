@@ -15,10 +15,10 @@ jobs:
         node-version: [ 18.x, 20.x ]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
@@ -30,7 +30,7 @@ jobs:
         run: npm run test
 
       - name: Test Reporter
-        uses: dorny/test-reporter@v1.6.0
+        uses: dorny/test-reporter@v1.8.0
         with:
           name: JEST Tests
           path: junit.xml
@@ -42,8 +42,8 @@ jobs:
     if: ${{ github.ref == 'refs/heads/main' }}
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
 
