@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.5.0 (2025-05-02)
+
+* chore: switch to ESM ([c74302c](https://github.com/unsass/breakpoint/commit/c74302c))
+* chore(deps): bump to `husky` 9.0.11 ([c4c8a86](https://github.com/unsass/breakpoint/commit/c4c8a86))
+* chore(deps): bump to `stylelint` 16.2.1 ([e5db90a](https://github.com/unsass/breakpoint/commit/e5db90a))
+* chore(deps): bump to `stylelint` 16.4.0 ([77a8531](https://github.com/unsass/breakpoint/commit/77a8531))
+* chore(deps): prevent dependencies vulnerabilities ([3abc600](https://github.com/unsass/breakpoint/commit/3abc600))
+* chore(deps): prevent dependencies vulnerabilities ([5e4bf4f](https://github.com/unsass/breakpoint/commit/5e4bf4f))
+* test(deps): switch from jest to vitest ([085f38e](https://github.com/unsass/breakpoint/commit/085f38e))
+* ci: rename `node.js.yml` to `publish.yml` ([bc1e244](https://github.com/unsass/breakpoint/commit/bc1e244))
+* ci: update `node.js.yml` ([b586e1a](https://github.com/unsass/breakpoint/commit/b586e1a))
+* ci: update `node.js.yml` ([8243866](https://github.com/unsass/breakpoint/commit/8243866))
+* ci: update node.js.yml ([e3a9e71](https://github.com/unsass/breakpoint/commit/e3a9e71))
+* build(deps): bump to `sass` 1.71.1 ([a86523c](https://github.com/unsass/breakpoint/commit/a86523c))
+* feat(deps): drop node 16 for node 18 ([3e0e13e](https://github.com/unsass/breakpoint/commit/3e0e13e))
+
 ## [2.4.0](https://github.com/unsass/breakpoint/compare/v2.3.0...v2.4.0) (2023-09-11)
 
 
