@@ -2,7 +2,7 @@
 //                                             TEST                                              //
 // ============================================================================================= //
 
-@use "true" as *;
+@use "pkg:sass-true" as *;
 @use "../index" as breakpoint;
 
 @include describe("functions") {
