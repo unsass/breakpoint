@@ -24,7 +24,7 @@
     $keys: map.keys(variables.$extend);
     $n: list.index($keys, $value);
 
-    @return if($n < length($keys), list.nth($keys, $n + 1), null);
+    @return if($n < list.length($keys), list.nth($keys, $n + 1), null);
 }
 
 ///

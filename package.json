@@ -2,6 +2,7 @@
     "name": "@unsass/breakpoint",
     "version": "2.5.0",
     "description": "Sass functions and mixins to use media queries rules.",
+    "type": "module",
     "scripts": {
         "lint:css": "stylelint --fix \"**/*.scss\"",
         "lint": "npm-run-all --parallel lint:*",
@@ -23,7 +24,7 @@
         "sass-true": "^8.1.0",
         "semantic-release": "^24.2.5",
         "stylelint": "^16.20.0",
-        "stylelint-config-unsass": "^1.0.1",
+        "stylelint-config-unsass": "^2.0.0",
         "vitest": "^3.2.3"
     },
     "dependencies": {
