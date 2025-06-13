@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>2.5.1 (2025-06-13)</small>
+
+* fix: don't use global built-in function call ([32ae4ad](https://github.com/unsass/breakpoint/commit/32ae4ad))
+* chore(deps): bump to `vitest` 3.2.3 ([2cc12d9](https://github.com/unsass/breakpoint/commit/2cc12d9))
+
 ## 2.5.0 (2025-05-02)
 
 * chore: switch to ESM ([c74302c](https://github.com/unsass/breakpoint/commit/c74302c))
