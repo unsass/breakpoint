@@ -23,7 +23,7 @@ jobs:
         run: npm run test
 
       - name: Tests Reporter
-        uses: dorny/test-reporter@v1
+        uses: dorny/test-reporter@v2
         with:
           name: Tests
           path: junit.xml
