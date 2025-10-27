@@ -16,6 +16,7 @@ export default defineConfig({
             ],
             [
                 'junit', {
+                    suiteName: 'Tests',
                     outputFile: './junit.xml'
                 }
             ]
