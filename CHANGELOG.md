@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.0](https://github.com/unsass/breakpoint/compare/v2.5.1...v2.6.0) (2026-01-05)
+
+### Features
+
+* use the plain-CSS if() syntax ([5c4a1ab](https://github.com/unsass/breakpoint/commit/5c4a1ab1c2a74a987d399cfbcc923d23a5cdd062))
+
+### Dependencies
+
+* **deps:** bump to `@commitlint/cli` 20.1.0 ([c90fb06](https://github.com/unsass/breakpoint/commit/c90fb0686abf8c1fa829f82f6848a4302c9f6fbe))
+* **deps:** bump to `sass-true` 10.0.0 ([0bdc2c8](https://github.com/unsass/breakpoint/commit/0bdc2c8e8075e54ff53100ed1296265b065e2e60))
+* **deps:** bump to `sass-true` 9.0.0 ([8e77c83](https://github.com/unsass/breakpoint/commit/8e77c83b306ba7c4ab56dc8a9f9434d43cd39119))
+* **deps:** bump to `sass` 1.97.1 ([3a17ad6](https://github.com/unsass/breakpoint/commit/3a17ad616fad9d87aa097b8fa6f8da823894cde8))
+* **deps:** bump to `semantic-release` 24.2.7 ([14385f3](https://github.com/unsass/breakpoint/commit/14385f33516538176caf1e709d9d8e62508e885e))
+* **deps:** bump to `semantic-release` 25.0.1 ([265a454](https://github.com/unsass/breakpoint/commit/265a4547bb5d07694eb4caad86984f57c4a268a4))
+* **deps:** bump to `semantic-release` 25.0.2 ([54c049b](https://github.com/unsass/breakpoint/commit/54c049b5a74ee453a7b777bc7ef3781d2b960ca3))
+* **deps:** bump to `stylelint-config-unsass` 2.2.0 ([3a15b5e](https://github.com/unsass/breakpoint/commit/3a15b5ebe49bf873475f410b9e9892baaedab982))
+* **deps:** bump to `stylelint` 16.25.0 ([b24e4ba](https://github.com/unsass/breakpoint/commit/b24e4bac66e6739b0f807039e23cbd816d3e3613))
+* **deps:** bump to `vitest` 4.0.4 ([0504a4b](https://github.com/unsass/breakpoint/commit/0504a4b76822489718bd5afdbe88264a80adb68f))
+* **deps:** bump to `vitest` 4.0.6 ([71cd88f](https://github.com/unsass/breakpoint/commit/71cd88f432303724b6d744efd919edaf06f69781))
+* **deps:** prevent dependencies vulnerabilities ([33e852d](https://github.com/unsass/breakpoint/commit/33e852d97301ebb66fa0ba2282828cf6e98f4aa2))
+* **deps:** prevent dependencies vulnerabilities ([2ea1eb7](https://github.com/unsass/breakpoint/commit/2ea1eb7f54878f08f5a817e1c79ba42749738062))
+
 ## 2.5.1 (2025-06-13)
 
 * fix: don't use global built-in function call ([32ae4ad](https://github.com/unsass/breakpoint/commit/32ae4ad))
