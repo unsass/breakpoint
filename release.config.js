@@ -1,76 +1,66 @@
-/**
- * @type {import('semantic-release').GlobalConfig}
- */
+// ============================================================================================= //
+//                                            RELEASE                                            //
+// ============================================================================================= //
+
 export default {
-    'branches': [
+    branches: [
         'main',
         '+([0-9])?(.{+([0-9]),x}).x',
         {
-            'name': 'beta',
-            'prerelease': true
+            name: 'beta',
+            prerelease: true
         }
     ],
-    'plugins': [
-        '@semantic-release/commit-analyzer',
+    plugins: [
         [
-            '@semantic-release/changelog',
+            '@semantic-release/commit-analyzer',
             {
-                'changelogTitle': '# Changelog\n\nAll notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.'
+                preset: 'conventionalcommits',
+                releaseRules: [
+                    {
+                        type: 'chore',
+                        scope: 'deps',
+                        release: 'minor'
+                    }
+                ]
             }
         ],
-        '@semantic-release/npm',
         [
             '@semantic-release/release-notes-generator',
             {
-                'preset': 'conventionalcommits',
-                'presetConfig': {
-                    'types': [
+                preset: 'conventionalcommits',
+                presetConfig: {
+                    types: [
                         {
-                            'type': 'feat',
-                            'section': 'Features'
+                            type: 'feat',
+                            section: 'Features'
                         },
                         {
-                            'type': 'fix',
-                            'section': 'Bug Fixes'
+                            type: 'fix',
+                            section: 'Bug Fixes'
                         },
                         {
-                            'type': 'chore',
-                            'hidden': true
-                        },
-                        {
-                            'type': 'build',
-                            'section': 'Build System'
-                        },
-                        {
-                            'type': 'docs',
-                            'hidden': true
-                        },
-                        {
-                            'type': 'style',
-                            'hidden': true
-                        },
-                        {
-                            'type': 'refactor',
-                            'section': 'Code Refactoring'
-                        },
-                        {
-                            'type': 'perf',
-                            'hidden': true
-                        },
-                        {
-                            'type': 'test',
-                            'hidden': true
+                            type: 'chore',
+                            scope: 'deps',
+                            section: 'Dependencies'
                         }
                     ]
                 }
             }
         ],
         [
-            '@semantic-release/git',
+            '@semantic-release/changelog',
             {
-                'message': 'chore(release): publish version ${nextRelease.version}'
+                changelogTitle: '# Changelog\n\nAll notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.'
             }
         ],
-        '@semantic-release/github'
+        '@semantic-release/npm',
+        '@semantic-release/github',
+        [
+            '@semantic-release/git',
+            {
+                message: 'chore(release): publish version ${nextRelease.version}'
+            }
+        ]
     ]
 };
