@@ -28,7 +28,7 @@
         "vitest": "^4.0.16"
     },
     "dependencies": {
-        "sass": "^1.71.1"
+        "sass": "^1.97.1"
     },
     "keywords": [
         "sass",
