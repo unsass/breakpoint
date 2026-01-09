@@ -6,7 +6,11 @@
 
 ## Introduction
 
-Sass functions and mixins to use media queries rules.
+Breakpoint is a small, dependency-free Sass toolkit for managing responsive breakpoints. Define named breakpoints
+centrally and apply them with concise, composable mixins and helpers so media-query logic stays readable and consistent.
+
+Designed for predictable, testable responsive behavior: supports named breakpoints, logical operators (min/max/between),
+and composition of queries so you can reuse breakpoint semantics across your stylesheets without duplicating values.
 
 ## Installing
 

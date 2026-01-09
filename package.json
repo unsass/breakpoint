@@ -1,7 +1,7 @@
 {
     "name": "@unsass/breakpoint",
     "version": "2.6.0",
-    "description": "Sass functions and mixins to use media queries rules.",
+    "description": "Composable Sass mixins and utilities for centralized, maintainable media-query breakpoints.",
     "type": "module",
     "scripts": {
         "lint:css": "stylelint --fix \"**/*.scss\"",
