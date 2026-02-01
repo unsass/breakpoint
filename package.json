@@ -27,7 +27,7 @@
         "semantic-release": "^25.0.2",
         "stylelint": "^16.26.1",
         "stylelint-config-unsass": "^2.2.0",
-        "vitest": "^4.0.16"
+        "vitest": "^4.0.18"
     },
     "dependencies": {
         "sass": "^1.97.1"
