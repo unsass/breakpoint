@@ -1,0 +1,46 @@
+// ============================================================================================= //
+//                                            UTILS                                              //
+// ============================================================================================= //
+
+@use "sass:list";
+@use "sass:map";
+
+///
+/// Sort a map of tokens by ascending value.
+///
+/// Keeps the key order aligned with the width order, so helpers that rely on
+/// insertion order (`get-next`, `only`) stay correct whatever the declaration order.
+///
+/// @access private
+///
+@function sort($map) {
+    $keys: ();
+
+    @each $key, $value in $map {
+        $inserted: false;
+        $result: ();
+
+        @each $k in $keys {
+            @if not $inserted and $value < map.get($map, $k) {
+                $result: list.append($result, $key);
+                $inserted: true;
+            }
+
+            $result: list.append($result, $k);
+        }
+
+        @if not $inserted {
+            $result: list.append($result, $key);
+        }
+
+        $keys: $result;
+    }
+
+    $sorted: ();
+
+    @each $k in $keys {
+        $sorted: map.set($sorted, $k, map.get($map, $k));
+    }
+
+    @return $sorted;
+}

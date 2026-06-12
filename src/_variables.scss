@@ -3,6 +3,7 @@
 // ============================================================================================= //
 
 @use "sass:map";
+@use "./utils";
 
 // ------------------------------------------------------------------------- //
 // Private variables
@@ -31,3 +32,5 @@ $reset: false !default;
 } @else {
     $extend: map.merge($_defaults, $screens);
 }
+
+$extend: utils.sort($extend);

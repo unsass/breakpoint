@@ -4,6 +4,7 @@
 
 @use "sass:map";
 @use "./functions";
+@use "./utils";
 @use "./variables";
 
 ///
@@ -170,8 +171,8 @@
 ///
 @mixin config($screens: (), $reset: false) {
     @if $screens and not $reset {
-        variables.$extend: map.merge(variables.$extend, $screens);
+        variables.$extend: utils.sort(map.merge(variables.$extend, $screens));
     } @else {
-        variables.$extend: $screens;
+        variables.$extend: utils.sort($screens);
     }
 }

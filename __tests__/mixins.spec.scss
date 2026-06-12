@@ -163,4 +163,21 @@
             }
         }
     }
+
+    @include describe("ordering") {
+        @include it("Should keep tokens sorted by value after an out-of-order config.") {
+            @include breakpoint.config(("xs": 320px, "lg": 960px), true);
+            @include breakpoint.config(("md": 768px));
+
+            @include assert-equal(breakpoint.get-next("xs"), "md");
+            @include assert-equal(breakpoint.get-next("md"), "lg");
+        }
+
+        @include it("Should sort tokens declared out of order in a reset config.") {
+            @include breakpoint.config(("lg": 960px, "xs": 320px, "md": 768px), true);
+
+            @include assert-equal(breakpoint.get-next("xs"), "md");
+            @include assert-equal(breakpoint.get-next("md"), "lg");
+        }
+    }
 }
