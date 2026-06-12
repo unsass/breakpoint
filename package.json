@@ -35,9 +35,12 @@
     },
     "keywords": [
         "sass",
+        "scss",
         "breakpoint",
+        "responsive",
         "media queries",
         "media query",
+        "mixins",
         "unsass",
         "front-end"
     ],
