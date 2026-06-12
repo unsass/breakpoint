@@ -6,11 +6,8 @@
 
 ## Introduction
 
-Breakpoint is a small, dependency-free Sass toolkit for managing responsive breakpoints. Define named breakpoints
-centrally and apply them with concise, composable mixins and helpers so media-query logic stays readable and consistent.
-
-Designed for predictable, testable responsive behavior: supports named breakpoints, logical operators (min/max/between),
-and composition of queries so you can reuse breakpoint semantics across your stylesheets without duplicating values.
+A small, dependency-free Sass toolkit for managing responsive breakpoints. Define named breakpoints centrally and apply
+them with concise, composable mixins and helpers so media-query logic stays readable and consistent.
 
 ## Installing
 
@@ -25,12 +22,17 @@ npm install @unsass/breakpoint
 
 .foo {
     @include breakpoint.up("lg") {
-        // ...
+        color: darkcyan;
     }
 }
 ```
 
-### Configuration
+### Options
+
+| Option     | Description                                                                           |
+|------------|---------------------------------------------------------------------------------------|
+| `$screens` | Map of breakpoint tokens, merged into the defaults. Default: the tokens listed below. |
+| `$reset`   | Erase the default tokens to start fresh with your own. Default: `false`.              |
 
 ```scss
 @use "@unsass/breakpoint" with (
@@ -40,25 +42,18 @@ npm install @unsass/breakpoint
 );
 ```
 
-### Options
-
-| Variable   | Default               | Description                                                                                       |
-|------------|-----------------------|---------------------------------------------------------------------------------------------------|
-| `$screens` | See `Tokens` section. | Sets a list of breakpoint tokens.                                                                 |
-| `$reset`   | `false`               | Erase the default `$screens` config for helping you on a fresh start with your own custom tokens. |
-
 ### Tokens
 
 | Key   | Value    |
 |-------|----------|
-| `xs`  | `360px`  |
+| `xs`  | `320px`  |
 | `sm`  | `480px`  |
 | `md`  | `768px`  |
 | `lg`  | `960px`  |
 | `xl`  | `1200px` |
 | `2xl` | `1400px` |
 
-You can also define new size:
+A token passed through `$screens` is merged into this list, so you can add new sizes:
 
 ```scss
 @use "@unsass/breakpoint" with (
@@ -68,52 +63,21 @@ You can also define new size:
 );
 ```
 
-The new token named `3xl` will be added to the default tokens list.
+Use `$reset: true` to drop the defaults entirely and only keep your own tokens.
 
 ### Top-level config override
 
-If variables are already configured on top-level using `@use ... with`, by another dependency for example, you can't use
-this solution anymore, because the module can only be setup once, this is a Sass restriction with **Module System**, but
-another solution exist for override the main configuration, with a mixin!
+A module can only be configured once with `@use ... with`. If the breakpoints are already configured at the top level
+(by another dependency, for example), use the `config()` mixin instead to override them at runtime.
 
-See [official documentation](https://sass-lang.com/documentation/at-rules/use#with-mixins) about override configuration
-with mixins.
+See the [official documentation](https://sass-lang.com/documentation/at-rules/use#with-mixins) about overriding
+configuration with mixins.
 
-| Mixin                      | Description                              |
-|----------------------------|:-----------------------------------------|
-| `config($screens, $reset)` | Override top-level `with` configuration. |
+## Mixins
 
-#### Declare config with `breakpoint.config()`
+### `up($token)`
 
-```scss
-@use "@unsass/breakpoint";
-
-// Extend the default list...
-@include breakpoint.config((
-    "3xl": 1980px
-));
-
-// ... or reset for fresh start...
-@include breakpoint.config((
-    "tablet": 768px,
-    "desktop": 960px
-), true);
-```
-
-## API
-
-### Sass mixins
-
-| Mixin                 | Description                                                                                                                    |
-|-----------------------|--------------------------------------------------------------------------------------------------------------------------------|
-| `up($token)`          | Sets media rule for minimum width only.                                                                                        |
-| `down($token)`        | Sets media rule for maximum width only.                                                                                        |
-| `only($token)`        | Sets media rule for between minimum and maximum widths, but the maximum will be automatically set with next value of `$token`. |
-| `between($min, $max)` | Sets media rule for between minimum and maximum widths.                                                                        |
-
-#### Up rule with `breakpoint.up()`
-
-The following Sass...
+Applies a `min-width` media query from the given token.
 
 ```scss
 @use "@unsass/breakpoint";
@@ -125,8 +89,6 @@ The following Sass...
 }
 ```
 
-...will produce the following CSS...
-
 ```css
 @media (min-width: 960px) {
     .foo {
@@ -135,9 +97,9 @@ The following Sass...
 }
 ```
 
-#### Down rule with `breakpoint.down()`
+### `down($token)`
 
-The following Sass...
+Applies a `max-width` media query up to the given token.
 
 ```scss
 @use "@unsass/breakpoint";
@@ -149,8 +111,6 @@ The following Sass...
 }
 ```
 
-...will produce the following CSS...
-
 ```css
 @media (max-width: 959px) {
     .foo {
@@ -159,9 +119,9 @@ The following Sass...
 }
 ```
 
-#### Only rule with `breakpoint.only()`
+### `only($token)`
 
-The following Sass...
+Applies a media query bounded by the token and the next one. The last token behaves like `up()`.
 
 ```scss
 @use "@unsass/breakpoint";
@@ -173,8 +133,6 @@ The following Sass...
 }
 ```
 
-...will produce the following CSS...
-
 ```css
 @media (min-width: 960px) and (max-width: 1199px) {
     .foo {
@@ -183,9 +141,9 @@ The following Sass...
 }
 ```
 
-#### Between rule with `breakpoint.between()`
+### `between($min, $max)`
 
-The following Sass...
+Applies a media query bounded by two tokens.
 
 ```scss
 @use "@unsass/breakpoint";
@@ -197,8 +155,6 @@ The following Sass...
 }
 ```
 
-...will produce the following CSS...
-
 ```css
 @media (min-width: 768px) and (max-width: 1199px) {
     .foo {
@@ -207,16 +163,31 @@ The following Sass...
 }
 ```
 
-### Sass functions
+### `config($screens, $reset)`
 
-| Function            | Description                                |
-|---------------------|--------------------------------------------|
-| `get-value($token)` | Get value from the configured tokens list. |
-| `get-screens()`     | Get list of screens tokens.                |
+Overrides the top-level `@use ... with` configuration at runtime. Extend the current tokens, or pass `$reset: true` to
+replace them entirely.
 
-#### Get token value with `breakpoint.get-value()`
+```scss
+@use "@unsass/breakpoint";
 
-The following Sass...
+// Extend the default list...
+@include breakpoint.config((
+    "3xl": 1980px
+));
+
+// ...or reset for a fresh start.
+@include breakpoint.config((
+    "tablet": 768px,
+    "desktop": 960px
+), true);
+```
+
+## Functions
+
+### `get-value($token)`
+
+Returns the value of a token from the configured tokens list.
 
 ```scss
 @use "@unsass/breakpoint";
@@ -226,10 +197,33 @@ The following Sass...
 }
 ```
 
-...will produce the following CSS...
-
 ```css
 .foo {
     width: 960px;
 }
+```
+
+### `get-next($token)`
+
+Returns the name of the token that immediately follows the given one. The last token returns `null`.
+
+```scss
+@use "@unsass/breakpoint";
+
+$next: breakpoint.get-next("lg"); // "xl"
+$last: breakpoint.get-next("2xl"); // null
+```
+
+### `get-screens($exclude…)`
+
+Returns the map of configured tokens. Pass one or more token names to exclude them from the result.
+
+```scss
+@use "@unsass/breakpoint";
+
+$all: breakpoint.get-screens();
+// ("xs": 320px, "sm": 480px, "md": 768px, "lg": 960px, "xl": 1200px, "2xl": 1400px)
+
+$subset: breakpoint.get-screens("xs", "2xl");
+// ("sm": 480px, "md": 768px, "lg": 960px, "xl": 1200px)
 ```
