@@ -1,4 +1,5 @@
 ## Files
+*.local.json
 *.log
 *.orig
 junit.xml
