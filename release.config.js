@@ -18,7 +18,12 @@ export default {
                 preset: 'conventionalcommits',
                 releaseRules: [
                     {
-                        type: 'chore',
+                        type: 'build',
+                        scope: 'deps-dev',
+                        release: false
+                    },
+                    {
+                        type: 'build',
                         scope: 'deps',
                         release: 'minor'
                     }
