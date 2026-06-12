@@ -3,7 +3,15 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "monthly"
+      interval: "weekly"
+    assignees:
+      - "borisdamevin"
+    reviewers:
+      - "borisdamevin"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
     assignees:
       - "borisdamevin"
     reviewers:
