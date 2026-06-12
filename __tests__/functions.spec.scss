@@ -22,23 +22,23 @@
                 }
             }
         }
+
+        @include it("Should return null for an unknown token.") {
+            @include assert-equal(breakpoint.get-value("nope"), null);
+        }
     }
 
     @include describe("get-next()") {
-        @include it("Should return value from token.") {
-            @include assert {
-                @include output(false) {
-                    .test {
-                        width: breakpoint.get-value("lg");
-                    }
-                }
+        @include it("Should return the next token name.") {
+            @include assert-equal(breakpoint.get-next("lg"), "xl");
+        }
 
-                @include expect(false) {
-                    .test {
-                        width: 960px;
-                    }
-                }
-            }
+        @include it("Should return the next token name from the first one.") {
+            @include assert-equal(breakpoint.get-next("xs"), "sm");
+        }
+
+        @include it("Should return null for the last token.") {
+            @include assert-equal(breakpoint.get-next("2xl"), null);
         }
     }
 

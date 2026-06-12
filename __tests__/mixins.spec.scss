@@ -70,6 +70,26 @@
                 }
             }
         }
+
+        @include it("Should behave like up() on the last token.") {
+            @include assert {
+                @include output(false) {
+                    .test {
+                        @include breakpoint.only("2xl") {
+                            color: darkcyan;
+                        }
+                    }
+                }
+
+                @include expect(false) {
+                    @media (min-width: 1400px) {
+                        .test {
+                            color: darkcyan;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     @include describe("between()") {
