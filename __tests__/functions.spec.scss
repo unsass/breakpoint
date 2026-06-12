@@ -40,6 +40,10 @@
         @include it("Should return null for the last token.") {
             @include assert-equal(breakpoint.get-next("2xl"), null);
         }
+
+        @include it("Should return null for an unknown token.") {
+            @include assert-equal(breakpoint.get-next("nope"), null);
+        }
     }
 
     @include describe("get-screens()") {

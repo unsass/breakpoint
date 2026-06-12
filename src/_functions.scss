@@ -24,7 +24,7 @@
     $keys: map.keys(variables.$extend);
     $n: list.index($keys, $value);
 
-    @return if(sass($n < list.length($keys)): list.nth($keys, $n + 1); else: null);
+    @return if(sass($n and $n < list.length($keys)): list.nth($keys, $n + 1); else: null);
 }
 
 ///
