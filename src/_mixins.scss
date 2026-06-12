@@ -143,6 +143,8 @@
         @error "Invalid token, `#{$min}` doesn't exist. Choose one of #{map.keys(variables.$extend)}.";
     } @else if $max and not map.has-key(variables.$extend, $max) {
         @error "Invalid token, `#{$max}` doesn't exist. Choose one of #{map.keys(variables.$extend)}.";
+    } @else if $min and $max and functions.get-value($min) >= functions.get-value($max) {
+        @error "Invalid range, `#{$min}` must be smaller than `#{$max}`.";
     }
 
     $min: functions.set-min($min);
