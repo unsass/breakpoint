@@ -1,6 +1,6 @@
 {
     "name": "@unsass/breakpoint",
-    "version": "2.6.0",
+    "version": "2.7.0",
     "description": "Composable Sass mixins and utilities for centralized, maintainable media-query breakpoints.",
     "type": "module",
     "scripts": {

@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.7.0](https://github.com/unsass/breakpoint/compare/v2.6.0...v2.7.0) (2026-06-13)
+
+### Features
+
+* **functions:** add get-prev() to retrieve the preceding token ([c793006](https://github.com/unsass/breakpoint/commit/c79300626636fe76bc4030674b812cd2c613fd14))
+* **functions:** sub-pixel precision for max-width bounds ([1803910](https://github.com/unsass/breakpoint/commit/18039109cad2f3c97223c44be5097a3d452f8cff))
+
+### Bug Fixes
+
+* **between:** error when `$min` is not smaller than `$max` ([a0f302c](https://github.com/unsass/breakpoint/commit/a0f302c9fbc4df7565aeb2c2d1414fea42615521))
+* **functions:** return null from `get-next()` for unknown token ([e38f1e7](https://github.com/unsass/breakpoint/commit/e38f1e7f42f2d7176b3b7dd66f0b05d79fc0af9e))
+* sort breakpoints by value so order-dependent helpers stay correct ([161ab93](https://github.com/unsass/breakpoint/commit/161ab934753a3f7b0565808de5f620537fdc39b3))
+
 ## [2.6.0](https://github.com/unsass/breakpoint/compare/v2.5.1...v2.6.0) (2026-01-05)
 
 ### Features
