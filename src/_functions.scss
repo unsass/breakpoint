@@ -7,7 +7,11 @@
 @use "./variables";
 
 ///
-/// Get value.
+/// Get the value of a token.
+///
+/// @param {string} $token - Token name to look up.
+///
+/// @return {number | null} The token value, or `null` if the token is unknown.
 ///
 /// @access public
 ///
@@ -16,7 +20,13 @@
 }
 
 ///
-/// Get next token.
+/// Get the token that immediately follows the given one.
+///
+/// @param {string} $value - Token name to start from.
+///
+/// @return {string | null} The next token name, or `null` for the last or an unknown token.
+///
+/// @see {function} get-prev
 ///
 /// @access public
 ///
@@ -28,7 +38,13 @@
 }
 
 ///
-/// Get previous token.
+/// Get the token that immediately precedes the given one.
+///
+/// @param {string} $value - Token name to start from.
+///
+/// @return {string | null} The previous token name, or `null` for the first or an unknown token.
+///
+/// @see {function} get-next
 ///
 /// @access public
 ///
@@ -40,9 +56,11 @@
 }
 
 ///
-/// Get screens list.
+/// Get the map of configured tokens.
 ///
-/// @param {arglist} $exclude - Exclude value.
+/// @param {arglist} $exclude - Token names to exclude from the result.
+///
+/// @return {map} The tokens map, without the excluded entries.
 ///
 /// @access public
 ///
@@ -51,7 +69,11 @@
 }
 
 ///
-/// Set min.
+/// Resolve the `min-width` value for a token.
+///
+/// @param {string} $token - Token name to resolve.
+///
+/// @return {number | null} The token value, or `null` when the token is unknown or its value is `0`.
 ///
 /// @access private
 ///
@@ -62,7 +84,12 @@
 }
 
 ///
-/// Set max.
+/// Resolve the `max-width` value for a token, offset by `0.02px` so it never
+/// overlaps the next token's `min-width` on integer widths.
+///
+/// @param {string} $token - Token name to resolve.
+///
+/// @return {number | null} The token value minus `0.02px`, or `null` when the token is unknown or its value is `0`.
 ///
 /// @access private
 ///

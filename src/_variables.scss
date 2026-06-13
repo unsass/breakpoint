@@ -24,7 +24,22 @@ $extend: ();
 // Public variables
 // ------------------------------------------------------------------------- //
 
+///
+/// Consumer tokens, merged into (or replacing) the defaults via `@use ... with`.
+///
+/// @type map
+///
+/// @access public
+///
 $screens: () !default;
+
+///
+/// When `true`, `$screens` replaces the defaults instead of extending them.
+///
+/// @type boolean
+///
+/// @access public
+///
 $reset: false !default;
 
 @if $reset {

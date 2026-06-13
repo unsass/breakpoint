@@ -22,6 +22,8 @@
 ///     }
 ///   }
 ///
+/// @param {string} $token - Token name to use as the lower bound.
+///
 /// @see {function} functions.set-min
 ///
 /// @access public
@@ -57,6 +59,8 @@
 ///     }
 ///   }
 ///
+/// @param {string} $token - Token name to use as the upper bound.
+///
 /// @see {function} functions.set-max
 ///
 /// @access public
@@ -91,6 +95,8 @@
 ///       color: darkcyan;
 ///     }
 ///   }
+///
+/// @param {string} $token - Token name whose range spans up to the next token.
 ///
 /// @see {function} functions.set-min
 /// @see {function} functions.set-max
@@ -133,6 +139,9 @@
 ///     }
 ///   }
 ///
+/// @param {string} $min - Token name for the lower bound (inclusive).
+/// @param {string} $max - Token name for the upper bound; must be larger than `$min`.
+///
 /// @see {function} functions.set-min
 /// @see {function} functions.set-max
 ///
@@ -168,6 +177,9 @@
 ///     "tablet": 768px,
 //      "desktop": 960px
 ///   ), true);
+///
+/// @param {map} $screens [()] - Tokens to merge into (or replace) the current config.
+/// @param {boolean} $reset [false] - When `true`, replace the tokens instead of merging them.
 ///
 /// @access public
 ///

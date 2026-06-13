@@ -11,6 +11,10 @@
 /// Keeps the key order aligned with the width order, so helpers that rely on
 /// insertion order (`get-next`, `only`) stay correct whatever the declaration order.
 ///
+/// @param {map} $map - Tokens map to sort.
+///
+/// @return {map} A new map ordered by ascending value.
+///
 /// @access private
 ///
 @function sort($map) {
