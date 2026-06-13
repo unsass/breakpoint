@@ -214,6 +214,17 @@ $next: breakpoint.get-next("lg"); // "xl"
 $last: breakpoint.get-next("2xl"); // null
 ```
 
+### `get-prev($token)`
+
+Returns the name of the token that immediately precedes the given one. The first token returns `null`.
+
+```scss
+@use "@unsass/breakpoint";
+
+$prev: breakpoint.get-prev("lg"); // "md"
+$first: breakpoint.get-prev("xs"); // null
+```
+
 ### `get-screens($exclude…)`
 
 Returns the map of configured tokens. Pass one or more token names to exclude them from the result.

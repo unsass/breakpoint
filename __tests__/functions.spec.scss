@@ -46,6 +46,24 @@
         }
     }
 
+    @include describe("get-prev()") {
+        @include it("Should return the previous token name.") {
+            @include assert-equal(breakpoint.get-prev("lg"), "md");
+        }
+
+        @include it("Should return null for the first token.") {
+            @include assert-equal(breakpoint.get-prev("xs"), null);
+        }
+
+        @include it("Should return the previous token name from the last one.") {
+            @include assert-equal(breakpoint.get-prev("2xl"), "xl");
+        }
+
+        @include it("Should return null for an unknown token.") {
+            @include assert-equal(breakpoint.get-prev("nope"), null);
+        }
+    }
+
     @include describe("get-screens()") {
         @include it("Should return a map of screens.") {
             @include assert-equal(breakpoint.get-screens(), (

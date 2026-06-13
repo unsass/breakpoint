@@ -28,6 +28,18 @@
 }
 
 ///
+/// Get previous token.
+///
+/// @access public
+///
+@function get-prev($value) {
+    $keys: map.keys(variables.$extend);
+    $n: list.index($keys, $value);
+
+    @return if($n and $n > 1, list.nth($keys, $n - 1), null);
+}
+
+///
 /// Get screens list.
 ///
 /// @param {arglist} $exclude - Exclude value.
