@@ -9,6 +9,12 @@
 A small, dependency-free Sass toolkit for managing responsive breakpoints. Define named breakpoints centrally and apply
 them with concise, composable mixins and helpers so media-query logic stays readable and consistent.
 
+<div align="center">
+
+![Breakpoint](.github/banner.svg)
+
+</div>
+
 ## Installing
 
 ```shell
