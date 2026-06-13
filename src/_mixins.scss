@@ -51,7 +51,7 @@
 ///   }
 ///
 /// @example - css
-///   @media (max-width: 959px) {
+///   @media (max-width: 959.98px) {
 ///     .foo {
 ///       color: darkcyan;
 ///     }
@@ -86,7 +86,7 @@
 ///   }
 ///
 /// @example - css
-///   @media (min-width: 960px) and (max-width: 1199px) {
+///   @media (min-width: 960px) and (max-width: 1199.98px) {
 ///     .foo {
 ///       color: darkcyan;
 ///     }
@@ -127,7 +127,7 @@
 ///   }
 ///
 /// @example - css
-///   @media (min-width: 768px) and (max-width: 1199px) {
+///   @media (min-width: 768px) and (max-width: 1199.98px) {
 ///     .foo {
 ///       color: darkcyan;
 ///     }

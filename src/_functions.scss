@@ -57,5 +57,5 @@
 @function set-max($token) {
     $max: get-value($token);
 
-    @return if(sass($max and $max > 0): $max - 1; else: null);
+    @return if(sass($max and $max > 0): $max - 0.02px; else: null);
 }

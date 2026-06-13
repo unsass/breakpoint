@@ -112,7 +112,7 @@ Applies a `max-width` media query up to the given token.
 ```
 
 ```css
-@media (max-width: 959px) {
+@media (max-width: 959.98px) {
     .foo {
         color: darkcyan;
     }
@@ -134,7 +134,7 @@ Applies a media query bounded by the token and the next one. The last token beha
 ```
 
 ```css
-@media (min-width: 960px) and (max-width: 1199px) {
+@media (min-width: 960px) and (max-width: 1199.98px) {
     .foo {
         color: darkcyan;
     }
@@ -156,7 +156,7 @@ Applies a media query bounded by two tokens.
 ```
 
 ```css
-@media (min-width: 768px) and (max-width: 1199px) {
+@media (min-width: 768px) and (max-width: 1199.98px) {
     .foo {
         color: darkcyan;
     }
