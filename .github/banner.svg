@@ -14,11 +14,11 @@
             <stop offset="1" stop-color="#1ad1cb"/>
         </linearGradient>
         <clipPath id="frame">
-            <rect width="800" height="360" rx="12"/>
+            <rect width="800" height="360"/>
         </clipPath>
     </defs>
 
-    <!-- everything is clipped to the rounded frame so corners and the top bar follow the radius -->
+    <!-- content clipped to the square frame so the top bar stays within bounds -->
     <g clip-path="url(#frame)">
         <rect width="800" height="360" fill="#101a24"/>
         <rect width="800" height="360" fill="url(#dots)"/>
@@ -61,6 +61,6 @@
         </g>
     </g>
 
-    <!-- crisp rounded border drawn on top, aligned with the clipped fill -->
-    <rect x="0.5" y="0.5" width="799" height="359" rx="11.5" fill="none" stroke="#2a3a47"/>
+    <!-- crisp square border drawn on top, aligned with the clipped fill -->
+    <rect x="0.5" y="0.5" width="799" height="359" fill="none" stroke="#2a3a47"/>
 </svg>
