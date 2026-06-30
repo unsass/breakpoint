@@ -48,6 +48,11 @@ export default {
                             type: 'chore',
                             scope: 'deps',
                             section: 'Dependencies'
+                        },
+                        {
+                            type: 'build',
+                            scope: 'deps',
+                            section: 'Dependencies'
                         }
                     ]
                 }
