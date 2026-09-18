@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.8.0](https://github.com/unsass/breakpoint/compare/v2.7.0...v2.8.0) (2026-09-18)
+
+### Bug Fixes
+
+* replace deprecated if() syntax in get-prev ([79104ed](https://github.com/unsass/breakpoint/commit/79104ed1b83f0da6137c78f11505fd1cb5bd3bb7))
+
+### Dependencies
+
+* **deps:** require node >=22 ([f4c4db5](https://github.com/unsass/breakpoint/commit/f4c4db506a4df5c8df38fd762cc5a4e197178e28))
+
 ## [2.7.0](https://github.com/unsass/breakpoint/compare/v2.6.0...v2.7.0) (2026-06-13)
 
 ### Features
