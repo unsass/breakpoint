@@ -13,7 +13,13 @@ permissions:
 
 jobs:
   test:
+    name: Tests (Node ${{ matrix.node-version }})
     runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [ 22, 24 ]
 
     permissions:
       contents: read
@@ -21,10 +27,10 @@ jobs:
       checks: write
 
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
-          node-version: 22
+          node-version: ${{ matrix.node-version }}
           cache: npm
 
       - name: Install Dependencies
@@ -39,7 +45,7 @@ jobs:
         uses: dorny/test-reporter@v3
         if: always()
         with:
-          name: Tests
+          name: Tests (Node ${{ matrix.node-version }})
           path: junit.xml
           reporter: java-junit
 
@@ -55,10 +61,10 @@ jobs:
       id-token: write
 
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
-          node-version: 22
+          node-version: 24
           registry-url: https://registry.npmjs.org
           cache: npm
 
@@ -71,4 +77,3 @@ jobs:
         run: npm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
