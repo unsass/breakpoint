@@ -52,7 +52,7 @@
     $keys: map.keys(variables.$extend);
     $n: list.index($keys, $value);
 
-    @return if($n and $n > 1, list.nth($keys, $n - 1), null);
+    @return if(sass($n and $n > 1): list.nth($keys, $n - 1); else: null);
 }
 
 ///
