@@ -33,6 +33,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: npm
 
+      - name: Update npm
+        run: npm install -g npm@12
+
       - name: Install Dependencies
         run: npm ci --no-audit
         env:
@@ -67,6 +70,9 @@ jobs:
           node-version: 24
           registry-url: https://registry.npmjs.org
           cache: npm
+
+      - name: Update npm
+        run: npm install -g npm@12
 
       - name: Install Dependencies
         run: npm ci --no-audit
