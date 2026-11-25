@@ -8,6 +8,10 @@
 @use "./variables";
 
 ///
+/// Apply styles from the given token's width and up.
+///
+/// The media query is skipped when the token value is `0`, since it would match every width.
+///
 /// @example - scss
 ///   .foo {
 ///     @include up("lg") {
@@ -24,7 +28,9 @@
 ///
 /// @param {string} $token - Token name to use as the lower bound.
 ///
-/// @see {function} functions.set-min
+/// @content Styles applied from the token width and up.
+///
+/// @see {function} set-min
 ///
 /// @access public
 ///
@@ -45,6 +51,11 @@
 }
 
 ///
+/// Apply styles below the given token's width.
+///
+/// The upper bound is offset by `0.02px` so it never overlaps `up()` on the same token.
+/// When the token value is `0`, the content is output without a media query.
+///
 /// @example - scss
 ///   .foo {
 ///     @include down("lg") {
@@ -61,7 +72,9 @@
 ///
 /// @param {string} $token - Token name to use as the upper bound.
 ///
-/// @see {function} functions.set-max
+/// @content Styles applied below the token width.
+///
+/// @see {function} set-max
 ///
 /// @access public
 ///
@@ -82,6 +95,10 @@
 }
 
 ///
+/// Apply styles only within the given token's range, from its width up to the next token.
+///
+/// On the last token there is no upper bound, so it behaves like `up()`.
+///
 /// @example - scss
 ///   .foo {
 ///     @include only("lg") {
@@ -98,9 +115,11 @@
 ///
 /// @param {string} $token - Token name whose range spans up to the next token.
 ///
-/// @see {function} functions.set-min
-/// @see {function} functions.set-max
-/// @see {function} functions.get-next
+/// @content Styles applied within the token range.
+///
+/// @see {function} set-min
+/// @see {function} set-max
+/// @see {function} get-next
 ///
 /// @access public
 ///
@@ -125,6 +144,8 @@
 }
 
 ///
+/// Apply styles between two tokens, from the first one's width up to below the second one's.
+///
 /// @example - scss
 ///   .foo {
 ///     @include between("md", "xl") {
@@ -142,8 +163,10 @@
 /// @param {string} $min - Token name for the lower bound (inclusive).
 /// @param {string} $max - Token name for the upper bound; must be larger than `$min`.
 ///
-/// @see {function} functions.set-min
-/// @see {function} functions.set-max
+/// @content Styles applied between the two tokens.
+///
+/// @see {function} set-min
+/// @see {function} set-max
 ///
 /// @access public
 ///
@@ -167,6 +190,10 @@
 }
 
 ///
+/// Update the tokens at runtime, merging into or replacing the current config.
+///
+/// Tokens are re-sorted by ascending value afterwards, whatever the declaration order.
+///
 /// @example - scss
 ///   @include config((
 ///     "3xl": 1980px
@@ -175,7 +202,7 @@
 /// @example - scss
 ///   @include config((
 ///     "tablet": 768px,
-//      "desktop": 960px
+///     "desktop": 960px
 ///   ), true);
 ///
 /// @param {map} $screens [()] - Tokens to merge into (or replace) the current config.
