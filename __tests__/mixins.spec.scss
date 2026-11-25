@@ -26,6 +26,26 @@
                 }
             }
         }
+
+        @include it("Should return a min-width media query from the first token.") {
+            @include assert {
+                @include output(false) {
+                    .test {
+                        @include breakpoint.up("xs") {
+                            color: darkcyan;
+                        }
+                    }
+                }
+
+                @include expect(false) {
+                    @media (min-width: 320px) {
+                        .test {
+                            color: darkcyan;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     @include describe("down()") {
@@ -41,6 +61,26 @@
 
                 @include expect(false) {
                     @media (max-width: 959.98px) {
+                        .test {
+                            color: darkcyan;
+                        }
+                    }
+                }
+            }
+        }
+
+        @include it("Should return a max-width media query from the first token.") {
+            @include assert {
+                @include output(false) {
+                    .test {
+                        @include breakpoint.down("xs") {
+                            color: darkcyan;
+                        }
+                    }
+                }
+
+                @include expect(false) {
+                    @media (max-width: 319.98px) {
                         .test {
                             color: darkcyan;
                         }
@@ -90,6 +130,26 @@
                 }
             }
         }
+
+        @include it("Should return a range media query on the first token.") {
+            @include assert {
+                @include output(false) {
+                    .test {
+                        @include breakpoint.only("xs") {
+                            color: darkcyan;
+                        }
+                    }
+                }
+
+                @include expect(false) {
+                    @media (min-width: 320px) and (max-width: 479.98px) {
+                        .test {
+                            color: darkcyan;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     @include describe("between()") {
@@ -105,6 +165,26 @@
 
                 @include expect(false) {
                     @media (min-width: 768px) and (max-width: 1199.98px) {
+                        .test {
+                            color: darkcyan;
+                        }
+                    }
+                }
+            }
+        }
+
+        @include it("Should return a range media query across the full scale.") {
+            @include assert {
+                @include output(false) {
+                    .test {
+                        @include breakpoint.between("xs", "2xl") {
+                            color: darkcyan;
+                        }
+                    }
+                }
+
+                @include expect(false) {
+                    @media (min-width: 320px) and (max-width: 1399.98px) {
                         .test {
                             color: darkcyan;
                         }
