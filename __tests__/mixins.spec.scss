@@ -7,7 +7,7 @@
 
 @include describe("mixins") {
     @include describe("up()") {
-        @include it("Should return breakpoint rules.") {
+        @include it("Should return a min-width media query.") {
             @include assert {
                 @include output(false) {
                     .test {
@@ -49,7 +49,7 @@
     }
 
     @include describe("down()") {
-        @include it("Should return breakpoint rules.") {
+        @include it("Should return a max-width media query.") {
             @include assert {
                 @include output(false) {
                     .test {
@@ -91,7 +91,7 @@
     }
 
     @include describe("only()") {
-        @include it("Should return breakpoint rules.") {
+        @include it("Should return a range media query up to the next token.") {
             @include assert {
                 @include output(false) {
                     .test {
@@ -153,7 +153,7 @@
     }
 
     @include describe("between()") {
-        @include it("Should return breakpoint rules.") {
+        @include it("Should return a range media query between two tokens.") {
             @include assert {
                 @include output(false) {
                     .test {
@@ -195,7 +195,7 @@
     }
 
     @include describe("config()") {
-        @include it("Should return breakpoint rules.") {
+        @include it("Should merge a new token into the config.") {
             @include assert {
                 @include output(false) {
                     @include breakpoint.config((
@@ -219,7 +219,7 @@
             }
         }
 
-        @include it("Should return breakpoint rules with '$reset' option.") {
+        @include it("Should replace the config with the '$reset' option.") {
             @include assert {
                 @include output(false) {
                     @include breakpoint.config((

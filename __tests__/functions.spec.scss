@@ -7,20 +7,8 @@
 
 @include describe("functions") {
     @include describe("get-value()") {
-        @include it("Should return value from token.") {
-            @include assert {
-                @include output(false) {
-                    .test {
-                        width: breakpoint.get-value("lg");
-                    }
-                }
-
-                @include expect(false) {
-                    .test {
-                        width: 960px;
-                    }
-                }
-            }
+        @include it("Should return the value of a token.") {
+            @include assert-equal(breakpoint.get-value("lg"), 960px);
         }
 
         @include it("Should return null for an unknown token.") {
