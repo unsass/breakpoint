@@ -1,0 +1,46 @@
+// ============================================================================================= //
+//                                             TEST                                              //
+// ============================================================================================= //
+
+@use "pkg:sass-true" as *;
+@use "../index" as breakpoint with (
+    $screens: (
+        "3xl": 1980px,
+        "tablet": 860px
+    )
+);
+
+@include describe("@use with ($screens)") {
+    @include it("Should merge tokens into the defaults, sorted by value.") {
+        @include assert-equal(breakpoint.get-screens(), (
+            "xs": 320px,
+            "sm": 480px,
+            "md": 768px,
+            "tablet": 860px,
+            "lg": 960px,
+            "xl": 1200px,
+            "2xl": 1400px,
+            "3xl": 1980px
+        ));
+    }
+
+    @include it("Should use a merged token in mixins.") {
+        @include assert {
+            @include output(false) {
+                .test {
+                    @include breakpoint.up("3xl") {
+                        color: darkcyan;
+                    }
+                }
+            }
+
+            @include expect(false) {
+                @media (min-width: 1980px) {
+                    .test {
+                        color: darkcyan;
+                    }
+                }
+            }
+        }
+    }
+}

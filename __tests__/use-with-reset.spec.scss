@@ -1,0 +1,63 @@
+// ============================================================================================= //
+//                                             TEST                                              //
+// ============================================================================================= //
+
+@use "pkg:sass-true" as *;
+@use "../index" as breakpoint with (
+    $screens: (
+        "desktop": 960px,
+        "mobile": 0,
+        "tablet": 768px
+    ),
+    $reset: true
+);
+
+@include describe("@use with ($screens, $reset: true)") {
+    @include it("Should replace the defaults, sorted by value.") {
+        @include assert-equal(breakpoint.get-screens(), (
+            "mobile": 0,
+            "tablet": 768px,
+            "desktop": 960px
+        ));
+    }
+
+    @include it("Should drop the default tokens.") {
+        @include assert-equal(breakpoint.get-value("xs"), null);
+    }
+
+    @include it("Should output up() content without media query on a zero token.") {
+        @include assert {
+            @include output(false) {
+                .test {
+                    @include breakpoint.up("mobile") {
+                        color: darkcyan;
+                    }
+                }
+            }
+
+            @include expect(false) {
+                .test {
+                    color: darkcyan;
+                }
+            }
+        }
+    }
+
+    @include it("Should output down() content without media query on a zero token.") {
+        @include assert {
+            @include output(false) {
+                .test {
+                    @include breakpoint.down("mobile") {
+                        color: darkcyan;
+                    }
+                }
+            }
+
+            @include expect(false) {
+                .test {
+                    color: darkcyan;
+                }
+            }
+        }
+    }
+}
